@@ -9,7 +9,7 @@ const Card = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const tokenAccess = localStorage.getItem("accessToken");
-  console.log(tokenAccess);
+  // console.log(tokenAccess);
 
   const handleUbicacion = () => {
     var options = {
@@ -27,14 +27,15 @@ const Card = () => {
       };
 
       setIsLoading(true);
-      console.log(tokenAccess);
+      // console.log(tokenAccess);
       return Auth.marcar({ position, token: tokenAccess })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           toast.success("Marcacion Correcta");
         })
         .catch((error) => {
           console.log(error);
+          toast.error("Algo salio mal");
         })
         .finally(() => {
           setIsLoading(false);

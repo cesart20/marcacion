@@ -5,7 +5,7 @@ export default {
     return api.post("/login", { email, password });
   },
   marcar({ position, token }) {
-    console.log(token);
+    // console.log(token);
     return api.post(
       "/marcaciones",
       { position },
